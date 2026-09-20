@@ -1,0 +1,380 @@
+/* ==========================================================================
+   ABOUT SECTION STYLES (Blush/Cream Editorial Theme)
+   ========================================================================== */
+
+.about-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+  padding-top: clamp(1.5rem, 3.2vw, 2.4rem) !important;
+}
+
+/* Main Split Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+/* Left Content Column */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about-eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.about-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.about-eyebrow-line {
+  flex-grow: 0;
+  width: 48px;
+  height: 1.5px;
+  background-color: var(--color-border-soft);
+}
+
+.about-heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Editorial Narrative Blocks */
+.about-narrative-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.about-lead-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-dark);
+  font-weight: var(--fw-medium);
+}
+
+.about-body-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+}
+
+/* Key Interests Tag Pills */
+.about-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.about-interest-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35rem 0.85rem;
+  background-color: var(--color-accent-subtle);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-dark);
+  transition: all var(--transition-fast);
+}
+
+.about-interest-tag:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  transform: translateY(-1px);
+}
+
+/* Call to Action */
+.about-cta-container {
+  margin-top: var(--space-md);
+}
+
+/* Right Visual Column (Arch Stage & 3D Microscope) */
+.about-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-arch-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  border: 8px solid var(--color-bg-surface);
+  box-shadow: var(--shadow-float);
+  background: radial-gradient(circle at 50% 40%, rgba(243, 228, 225, 0.8) 0%, rgba(250, 246, 243, 0.95) 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1440px) {
+  .about-arch-stage {
+    max-width: 480px;
+  }
+}
+
+/* Watermark Badge inside Arch */
+.about-arch-watermark {
+  position: absolute;
+  top: 24px;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-arch-watermark-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  opacity: 0.75;
+}
+
+/* 3D Canvas Container inside Arch */
+.about-canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Floating Script Annotation */
+.about-polaroid-note {
+  position: absolute;
+  bottom: 35px;
+  right: -20px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  z-index: 3;
+  transform: rotate(2deg);
+  transition: transform var(--transition-fast);
+}
+
+.about-polaroid-note:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.about-polaroid-text {
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-accent-primary);
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .about-polaroid-note {
+    right: 0;
+    bottom: 15px;
+  }
+}
+
+/* Stack of Scientific Book Annotations (e.g. DIAGNOSE, UNDERSTAND, CREATE IMPACT) */
+.about-book-stack {
+  position: absolute;
+  bottom: 25px;
+  left: -15px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 3;
+}
+
+.about-book-item {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 640px) {
+  .about-book-stack {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   CORE VALUES PILLAR BAR (Matching Approved Reference Layout)
+   ========================================================================== */
+
+.about-values-bar {
+  margin-top: var(--space-3xl);
+  position: relative;
+  z-index: 2;
+}
+
+.about-values-surface {
+  background-color: var(--color-bg-surface-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.about-value-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.about-value-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.about-value-card:hover .about-value-icon-wrapper {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  transform: scale(1.06);
+}
+
+.about-value-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-value-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.about-value-desc {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Inspirational Editorial Quote */
+.about-quote-container {
+  display: none;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-accent-primary);
+  border-left: 1.5px solid var(--color-border-soft);
+  padding-left: var(--space-md);
+  line-height: 1.4;
+}
+
+@media (min-width: 1200px) {
+  .about-quote-container {
+    display: block;
+  }
+}
+
+/* ── Mobile Compact Refinements ── */
+@media (max-width: 640px) {
+  .about-grid {
+    gap: var(--space-lg);
+  }
+  .about-values-bar {
+    margin-top: var(--space-xl);
+  }
+  .about-values-surface {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-grid {
+    gap: var(--space-md);
+  }
+  .about-values-bar {
+    margin-top: var(--space-lg);
+  }
+  .about-values-surface {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+  .about-value-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+  .about-value-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-values-surface {
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+  .about-value-title {
+    font-size: 0.9rem;
+  }
+}

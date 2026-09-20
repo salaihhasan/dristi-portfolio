@@ -1,0 +1,493 @@
+/* ==========================================================================
+   EXPERIENCE SECTION STYLES (OPTION A: Straight Vertical Clinical Timeline)
+   Blush/Cream Medical Editorial — Clinical Exposure Journey
+   ========================================================================== */
+
+.experience-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* Background Ambient Glows */
+.experience-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: -6%;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(243, 228, 225, 0.45) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience-ambient-glow-right {
+  position: absolute;
+  bottom: 18%;
+  right: -5%;
+  width: 460px;
+  height: 460px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(235, 206, 202, 0.35) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Section Header ── */
+.experience-header {
+  max-width: 680px;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.experience-eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.experience-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.experience-eyebrow-line {
+  width: 48px;
+  height: 1.5px;
+  background-color: var(--color-border-soft);
+}
+
+.experience-heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+.experience-intro-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--space-xs);
+  max-width: 620px;
+}
+
+/* ==========================================================================
+   STRAIGHT VERTICAL TIMELINE CONTAINER
+   ========================================================================== */
+
+.exp-timeline-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.exp-vertical-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* Timeline Item: Spine Node Column + Content Card */
+.exp-timeline-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--space-md);
+  position: relative;
+}
+
+@media (max-width: 540px) {
+  .exp-timeline-item {
+    grid-template-columns: 32px 1fr;
+    gap: var(--space-xs);
+  }
+}
+
+/* ── Spine Node Column ── */
+.exp-node-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.exp-spine-node {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-subtle);
+  flex-shrink: 0;
+  z-index: 2;
+  transition: all 0.35s ease;
+}
+
+@media (max-width: 540px) {
+  .exp-spine-node {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+}
+
+.exp-timeline-item.is-active .exp-spine-node {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  box-shadow: 0 0 0 4px rgba(182, 95, 109, 0.22);
+}
+
+.exp-timeline-item:hover .exp-spine-node {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 6px rgba(182, 95, 109, 0.3);
+}
+
+.exp-spine-segment {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent-primary) 0%,
+    rgba(182, 95, 109, 0.25) 50%,
+    var(--color-border-soft) 100%
+  );
+  margin-top: 6px;
+  margin-bottom: 6px;
+  min-height: 36px;
+  transform-origin: top center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-card,
+  .exp-chip-item,
+  .exp-spine-segment {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .exp-spine-node {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-accent-primary);
+  }
+}
+
+/* ── Compact Clinical Timeline Card ── */
+.exp-card {
+  background-color: var(--card-surface-exp);
+  border: 1.5px solid rgba(182, 95, 109, 0.18);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: 0 8px 24px -4px rgba(23, 22, 27, 0.05), 0 2px 6px 0 rgba(182, 95, 109, 0.04);
+  margin-bottom: var(--space-xl);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  min-width: 0;
+}
+
+/* Connecting Bridge Arm from Node to Card */
+.exp-card-bridge {
+  position: absolute;
+  top: 17px;
+  left: calc(var(--space-md) * -1);
+  width: var(--space-md);
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--color-accent-primary),
+    rgba(182, 95, 109, 0.4)
+  );
+  transform-origin: left center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 540px) {
+  .exp-card-bridge {
+    left: calc(var(--space-xs) * -1);
+    width: var(--space-xs);
+    top: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .exp-card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+}
+
+.exp-card:hover {
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -4px rgba(182, 95, 109, 0.16), 0 4px 10px 0 rgba(23, 22, 27, 0.04);
+}
+
+/* Top Meta Bar */
+.exp-card-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-sm);
+}
+
+.exp-card-pill-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exp-phase-tag {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+.exp-exposure-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.exp-card-role {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-subtle);
+}
+
+/* Inner Split / Stack */
+.exp-card-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .exp-card-inner {
+    grid-template-columns: 1fr 220px;
+    align-items: start;
+  }
+}
+
+/* Text Column */
+.exp-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.exp-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.22rem, 2vw, 1.48rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+  margin-bottom: 3px;
+}
+
+.exp-card-org {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.exp-card-desc {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-sm);
+}
+
+/* Compact Takeaway Chips */
+.exp-card-takeaways {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+}
+
+.exp-takeaways-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: 2px;
+}
+
+.exp-chips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.exp-chip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-text-dark);
+  line-height: var(--lh-normal);
+}
+
+.exp-chip-item svg {
+  color: var(--color-accent-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Media Thumbnail Column */
+.exp-card-media {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.exp-thumb-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  max-height: 160px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--shadow-subtle);
+}
+
+.exp-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.exp-thumb-frame:hover .exp-thumb-img {
+  transform: scale(1.03);
+}
+
+.exp-thumb-badge {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.15rem 0.45rem;
+  background-color: rgba(23, 22, 27, 0.78);
+  color: #FAF6F3;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 8.5px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.06em;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   MOBILE COMPACT REFINEMENTS
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .experience-header {
+    margin-bottom: var(--space-md);
+  }
+  .exp-card-inner {
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-header {
+    margin-bottom: var(--space-sm);
+  }
+  .exp-card {
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+  .exp-card-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .exp-card-title {
+    font-size: 1.1rem;
+  }
+  /* Takeaways more compact */
+  .exp-card-takeaways {
+    padding: 6px 10px;
+  }
+  .exp-chip-item {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .exp-card {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+  .exp-card-title {
+    font-size: 1rem;
+  }
+  .exp-timeline-item {
+    grid-template-columns: 28px 1fr;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,634 @@
+/* ==========================================================================
+   INSTRUMENTS SECTION STYLES (Blush/Cream Medical Editorial Theme)
+   ========================================================================== */
+
+.instruments-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* Background Ambient Glows */
+.instruments-ambient-glow {
+  position: absolute;
+  top: 25%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(243, 228, 225, 0.5) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.instruments-ambient-glow-left {
+  position: absolute;
+  bottom: 15%;
+  left: -5%;
+  width: 450px;
+  height: 450px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(235, 206, 202, 0.35) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Header */
+.instruments-header {
+  max-width: 700px;
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.instruments-eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.instruments-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.instruments-eyebrow-line {
+  width: 48px;
+  height: 1.5px;
+  background-color: var(--color-border-soft);
+}
+
+.instruments-heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+.instruments-intro-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--space-xs);
+}
+
+/* ==========================================================================
+   SHOWCASE GRID (FEATURED DISPLAY CHAMBER + INSTRUMENT REGISTRY)
+   ========================================================================== */
+
+.instruments-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .instruments-showcase-grid {
+    grid-template-columns: 1.35fr 0.95fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
+}
+
+/* ==========================================================================
+   FEATURED DISPLAY CHAMBER & PINNED STACKING CARDS
+   ========================================================================== */
+
+.instruments-pinned-container {
+  position: relative;
+  width: 100%;
+}
+
+.instruments-stack-stage {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  perspective: 1200px;
+}
+
+@media (max-width: 640px) {
+  .instruments-stack-stage {
+    min-height: 570px;
+  }
+}
+
+.instrument-chamber {
+  background: linear-gradient(145deg, #FAF7F4 0%, #F1F6F7 100%);
+  border: 1.5px solid rgba(95, 126, 182, 0.2);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 0 10px 32px -4px rgba(95, 126, 182, 0.1), 0 2px 8px -2px rgba(23, 22, 27, 0.03);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Individual Stacking Card in Deck Stage */
+.instrument-stack-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  box-shadow: 0 16px 42px -6px rgba(95, 126, 182, 0.16), 0 4px 12px 0 rgba(23, 22, 27, 0.04);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.instrument-stack-card.is-active-card {
+  border-color: rgba(95, 126, 182, 0.45);
+  box-shadow: 0 22px 50px -6px rgba(95, 126, 182, 0.22), 0 6px 16px 0 rgba(23, 22, 27, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .instrument-registry-wrap {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .instruments-stack-stage {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+  .instrument-stack-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+@media (min-width: 640px) {
+  .instrument-chamber {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
+
+/* Top Meta Row */
+.instrument-chamber-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(95, 126, 182, 0.15);
+  margin-bottom: var(--space-md);
+}
+
+.instrument-index-tag {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  background-color: var(--color-accent-subtle);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.instrument-category-tag {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4A6B82;
+  background-color: rgba(95, 126, 182, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.instrument-experience-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #386A4C;
+  background-color: rgba(67, 130, 67, 0.08);
+  border: 1px solid rgba(67, 130, 67, 0.2);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.instrument-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: #386A4C;
+  display: inline-block;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+/* Technical Schematic Stage Frame */
+.instrument-schematic-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 240px;
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(240, 246, 248, 0.85) 100%);
+  border: 1px solid rgba(95, 126, 182, 0.25);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 10px rgba(95, 126, 182, 0.05);
+}
+
+.instrument-schematic-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 180px;
+}
+
+.instrument-schematic-watermark {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  opacity: 0.6;
+}
+
+/* Chamber Main Body - Prominent & Bold Instrument Name */
+.instrument-chamber-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-2xs);
+}
+
+.instrument-chamber-desc {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-md);
+}
+
+/* Key Functions Block */
+.instrument-functions-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: var(--space-md);
+}
+
+.instrument-functions-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.instrument-functions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.instrument-function-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+.instrument-function-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-accent-primary);
+}
+
+/* Chamber Controls */
+.instrument-chamber-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: auto;
+}
+
+.instrument-pagination-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.1em;
+  color: var(--color-text-subtle);
+}
+
+.instrument-pagination-current {
+  color: var(--color-accent-primary);
+  font-weight: var(--fw-bold);
+}
+
+.instrument-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.instrument-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.instrument-nav-btn:hover:not(:disabled) {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent-primary);
+  transform: translateY(-1px);
+}
+
+.instrument-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   INSTRUMENT REGISTRY / INDEX LIST
+   ========================================================================== */
+
+.instrument-registry-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.instrument-registry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.instrument-registry-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.instrument-registry-count {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent-primary);
+  background-color: var(--color-accent-subtle);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.instrument-index-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.instrument-index-item {
+  width: 100%;
+  text-align: left;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-width: 0;
+}
+
+.instrument-index-item:hover {
+  border-color: var(--color-accent-subtle);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.instrument-index-item.is-selected {
+  background-color: var(--color-bg-surface);
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 4px 16px rgba(182, 95, 109, 0.18);
+}
+
+.instrument-index-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.instrument-index-num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-subtle);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.instrument-index-item.is-selected .instrument-index-num {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent-primary);
+}
+
+.instrument-index-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Verified Instrument Name - Large, Bold & Prominent */
+.instrument-index-name {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.instrument-index-cat {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 1px;
+}
+
+.instrument-index-icon-wrap {
+  color: var(--color-text-subtle);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.instrument-index-item.is-selected .instrument-index-icon-wrap {
+  color: var(--color-accent-primary);
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE REFINEMENTS (1440, 1200, 992, 768, 480, 360)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .instrument-chamber {
+    padding: var(--space-lg);
+  }
+
+  .instrument-chamber-name {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .instrument-index-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .instrument-index-item:hover {
+    transform: none;
+  }
+
+  /* Section header tighter */
+  .instruments-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Schematic stage smaller on mobile */
+  .instrument-schematic-stage {
+    aspect-ratio: 16 / 8;
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Tighter chamber padding */
+  .instrument-chamber {
+    padding: var(--space-md);
+  }
+
+  .instruments-header {
+    margin-bottom: var(--space-md);
+  }
+}
+
+@media (max-width: 540px) {
+  .instrument-schematic-stage {
+    aspect-ratio: 4 / 3;
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .instrument-chamber {
+    padding: var(--space-md);
+  }
+
+  .instrument-chamber-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .instrument-chamber-name {
+    font-size: 1.3rem;
+  }
+
+  .instrument-functions-card {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .instrument-chamber {
+    padding: 12px 10px;
+  }
+
+  .instrument-chamber-name {
+    font-size: 1.18rem;
+  }
+
+  .instrument-index-item {
+    padding: 10px;
+  }
+
+  .instrument-index-name {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,187 @@
+:root {
+  /* ==========================================================================
+     1. COLOR SYSTEM (Approved Blush / Cream Healthcare Palette)
+     ========================================================================== */
+  
+  /* Primary & Secondary Backgrounds */
+  --color-bg-primary: #FAF6F3;        /* Warm Cream / Off-white (main canvas) */
+  --color-bg-secondary: #F3E4E1;      /* Soft Blush (cards, alternate sections) */
+  --color-bg-tertiary: #EBDAD6;       /* Deeper blush for subtle depth */
+  --color-bg-surface: #FCFAF8;        /* Warm Ivory / Parchment for elevated cards & badges */
+  --color-bg-surface-glass: rgba(252, 250, 248, 0.85); /* Frosted glass card */
+  --color-bg-surface-glass-subtle: rgba(250, 246, 243, 0.75);
+
+  /* Subtle Chapter-Tinted Card Surfaces (Step 10B) */
+  --card-surface-about: #FDFBF8;       /* Subtle warm parchment card */
+  --card-surface-education: #FAF6F4;   /* Soft ivory-blush card */
+  --card-surface-skills: #F3F7F8;      /* Cool clinical laboratory card */
+  --card-surface-exp: #F0F5F2;         /* Calm clinical sage tint card */
+  --card-surface-projects: #F7F3EE;    /* Archival warm paper card */
+  --card-surface-certs: #FAF4F2;       /* Delicate rose-tinted card */
+  --card-surface-contact: #FAF6F5;     /* Warm taupe-blush card */
+
+  /* Visual Chapter Atmospheric Backgrounds (Step 9) */
+  --color-chapter-home: #FAF6F3;       /* 01 Home: Warm Cream/Blush */
+  --color-chapter-about: #FDFBF7;      /* 02 About: Soft Parchment / Off-White */
+  --color-chapter-skills: #F2F6F7;     /* 03 Skills: Cool Scientific Laboratory Tone */
+  --color-chapter-exp: #EDF4F0;        /* 04 Experience: Muted Clinical Sage */
+  --color-chapter-projects: #F6F2EC;   /* 05 Projects: Archival Paper Tone */
+  --color-chapter-certs: #FAF5F3;      /* 06 Achievements: Soft Blush / Rose */
+  --color-chapter-contact: #F0EAE8;    /* 07 Contact: Medium-Light Muted Rose-Slate / Warm Taupe-Blush Closing Chapter */
+
+  /* Primary Accent Colors */
+  --color-accent-primary: #B65F6D;     /* Dusty Rose / Medical Lab Accent */
+  --color-accent-hover: #9E4D5B;       /* Deep Dusty Rose for hover states */
+  --color-accent-active: #843B48;      /* Pressed / Active state */
+  --color-accent-subtle: #F6ECE9;      /* Light tint for tags & pill backgrounds */
+  --color-accent-tint: rgba(182, 95, 109, 0.12); /* 12% tint for subtle rings */
+  --color-accent-glow: rgba(182, 95, 109, 0.25); /* Glow for focused/hovered items */
+
+  /* Secondary Palette — Section Accent Colors (medical-editorial range) */
+  --color-teal:         #3D7A8A;       /* Clinical Teal — Skills / Science / Instruments */
+  --color-teal-subtle:  #EBF4F6;       /* Teal tint background */
+  --color-teal-muted:   rgba(61, 122, 138, 0.12);
+
+  --color-sage:         #4E7D6A;       /* Clinical Sage — Experience / Healthcare */
+  --color-sage-subtle:  #EBF4EF;       /* Sage tint background */
+  --color-sage-muted:   rgba(78, 125, 106, 0.12);
+
+  --color-gold:         #8A6630;       /* Warm Gold — Education / Achievements */
+  --color-gold-subtle:  #F5EDDF;       /* Gold tint background */
+  --color-gold-muted:   rgba(138, 102, 48, 0.12);
+
+  --color-violet:       #6B5A9E;       /* Muted Violet — Projects / Research */
+  --color-violet-subtle:#EFEcF7;       /* Violet tint background */
+  --color-violet-muted: rgba(107, 90, 158, 0.12);
+
+  --color-amber:        #9B6B3C;       /* Warm Amber — Certifications */
+  --color-amber-subtle: #F6EFE3;       /* Amber tint background */
+
+  /* Text & Typography Colors */
+  --color-text-dark: #17161B;          /* Deep Charcoal (main headings & body, contrast > 13:1) */
+  --color-text-muted: #57535A;         /* Muted Charcoal (subheadings & descriptions, contrast > 6:1) */
+  --color-text-subtle: #8A858D;        /* Subtle Grey-mauve (metadata, labels, dates) */
+  --color-text-inverse: #FFFFFF;       /* Pure white text for primary CTA buttons */
+  --color-text-accent: #B65F6D;        /* Text highlight matching primary accent */
+
+  /* Borders & Dividers */
+  --color-border-soft: #E5CECA;        /* Soft Rose Border */
+  --color-border-light: rgba(229, 206, 202, 0.5); /* Semi-transparent soft border */
+  --color-border-subtle: rgba(23, 22, 27, 0.08);  /* Micro divider */
+  --color-border-accent: rgba(182, 95, 109, 0.35); /* Accent highlight border */
+
+  /* ==========================================================================
+     2. TYPOGRAPHY SYSTEM
+     ========================================================================== */
+  
+  /* Font Families */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Caveat', cursive, sans-serif;
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Fluid Typography Scale (Responsive clamp values from specifications) */
+  --fs-hero: clamp(2.5rem, 5.5vw + 1rem, 5.75rem);       /* 40px - 92px */
+  --fs-hero-mobile: 2.5rem;                              /* 40px */
+  --fs-section-title: clamp(2rem, 3.5vw + 0.5rem, 3.75rem); /* 32px - 60px */
+  --fs-subheading: clamp(1.25rem, 1.8vw + 0.5rem, 1.875rem); /* 20px - 30px */
+  --fs-card-title: clamp(1.125rem, 1.2vw + 0.25rem, 1.375rem); /* 18px - 22px */
+  --fs-body-lg: clamp(1.0625rem, 0.5vw + 0.875rem, 1.1875rem); /* 17px - 19px */
+  --fs-body: 1rem;                                       /* 16px base */
+  --fs-sm: 0.875rem;                                     /* 14px small */
+  --fs-xs: 0.75rem;                                      /* 12px micro / tags */
+  --fs-xxs: 0.6875rem;                                   /* 11px uppercase labels */
+
+  /* Line Heights */
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.65;
+  --lh-loose: 1.8;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.14em;
+
+  /* ==========================================================================
+     3. SPACING & LAYOUT SCALE
+     ========================================================================== */
+  
+  --space-3xs: 0.125rem; /* 2px */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-4xl: 6rem;     /* 96px */
+  --space-5xl: 8rem;     /* 128px */
+
+  /* Layout Widths */
+  --container-max: 1360px;
+  --container-narrow: 1040px;
+  --container-text: 760px;
+
+  /* ==========================================================================
+     4. BORDER RADII
+     ========================================================================== */
+  
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-2xl: 44px;
+  --radius-full: 9999px;
+  --radius-arch: 180px 180px 0 0; /* Architectural arched frame for hero & about portraits */
+
+  /* ==========================================================================
+     5. ELEVATION & SHADOWS
+     ========================================================================== */
+  
+  --shadow-subtle: 0 2px 8px -1px rgba(23, 22, 27, 0.03), 0 1px 3px 0 rgba(23, 22, 27, 0.02);
+  --shadow-sm: 0 4px 14px -2px rgba(23, 22, 27, 0.05), 0 2px 5px -1px rgba(23, 22, 27, 0.02);
+  --shadow-md: 0 10px 28px -4px rgba(182, 95, 109, 0.08), 0 4px 12px -2px rgba(23, 22, 27, 0.04);
+  --shadow-lg: 0 20px 45px -8px rgba(182, 95, 109, 0.12), 0 8px 18px -4px rgba(23, 22, 27, 0.05);
+  --shadow-float: 0 24px 60px -12px rgba(23, 22, 27, 0.14), 0 10px 24px -6px rgba(182, 95, 109, 0.08);
+  --shadow-inner-soft: inset 0 2px 4px 0 rgba(255, 255, 255, 0.6);
+
+  /* ==========================================================================
+     6. MOTION, TIMING & EASING
+     ========================================================================== */
+  
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  
+  --transition-fast: 0.15s var(--ease-editorial);
+  --transition-base: 0.3s var(--ease-editorial);
+  --transition-smooth: 0.5s var(--ease-editorial);
+  --transition-slow: 0.8s var(--ease-editorial);
+
+  /* ==========================================================================
+     7. Z-INDEX SCALE
+     ========================================================================== */
+  
+  --z-bg-pattern: -1;
+  --z-normal: 1;
+  --z-elevated: 10;
+  --z-sticky: 50;
+  --z-header: 100;
+  --z-side-tracker: 150;
+  --z-modal-backdrop: 200;
+  --z-modal: 210;
+  --z-toast: 300;
+}

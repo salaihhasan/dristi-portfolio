@@ -1,0 +1,192 @@
+/* ==========================================================================
+   STEP 9 — VISUAL CHAPTER BACKGROUNDS & SECTION TRANSITIONS
+   Each section gets its own restrained editorial background identity.
+   Colors are defined in tokens.css as --color-chapter-*.
+   ========================================================================== */
+
+/* ── 01 Home (Hero) ── already warm cream, no override needed */
+
+/* ── 02 About ── parchment / off-white */
+.about-section {
+  background-color: var(--color-chapter-about) !important;
+}
+
+/* ── 03 Skills & Instruments ── cool scientific / lab tone */
+.skills-section {
+  background-color: var(--color-chapter-skills) !important;
+}
+/* Lab calibration grid lives in the section wrapper */
+.skills-section > .skills-lab-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(95, 126, 182, 0.032) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(95, 126, 182, 0.032) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 04 Experience ── muted clinical sage */
+.experience-section {
+  background-color: var(--color-chapter-exp) !important;
+}
+
+.experience-section .exp-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(182, 95, 109, 0.18);
+  box-shadow: 0 4px 20px -2px rgba(95, 138, 110, 0.08);
+}
+
+.experience-section .exp-card:hover {
+  border-color: var(--color-accent-primary);
+  box-shadow: 0 8px 28px -4px rgba(95, 138, 110, 0.15);
+}
+
+.experience-section .exp-ambient-glow {
+  background: radial-gradient(circle, rgba(210, 228, 218, 0.5) 0%, rgba(237, 244, 240, 0) 70%);
+}
+
+
+/* ── 05 Projects ── archival paper */
+.projects-section {
+  background-color: var(--color-chapter-projects) !important;
+}
+
+/* ── 06 Achievements / Certifications ── soft blush / rose */
+.certs-section {
+  background-color: var(--color-chapter-certs) !important;
+}
+
+/* ── 07 Contact ── medium-light editorial closing chapter (muted rose-slate / warm taupe-blush) */
+.ct-section {
+  background-color: var(--color-chapter-contact) !important;
+}
+
+.ct-section .ct-eyebrow         { color: var(--color-accent-primary); }
+.ct-section .ct-eyebrow-line    { background: rgba(182, 95, 109, 0.25); }
+.ct-section .ct-headline        { color: var(--color-text-dark); }
+.ct-section .ct-subtext         { color: var(--color-text-muted); }
+.ct-section .ct-location        { color: var(--color-text-subtle); }
+
+.ct-section .ct-link-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(182, 95, 109, 0.18);
+  color: var(--color-text-dark);
+  box-shadow: 0 4px 14px -2px rgba(182, 95, 109, 0.06);
+}
+
+.ct-section .ct-link-card:hover {
+  border-color: var(--color-accent-primary);
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px -4px rgba(182, 95, 109, 0.15);
+  transform: translateX(4px);
+}
+
+.ct-section .ct-link-label      { color: var(--color-text-subtle); }
+.ct-section .ct-link-value      { color: var(--color-text-dark); font-weight: 500; }
+.ct-section .ct-link-arrow      { color: var(--color-text-subtle); }
+.ct-section .ct-link-card:hover .ct-link-arrow {
+  color: var(--color-accent-primary);
+}
+
+.ct-section .ct-resume-note     { color: var(--color-text-muted); }
+
+.ct-section .ct-monogram-frame {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(182, 95, 109, 0.22);
+  box-shadow: 0 12px 32px -4px rgba(182, 95, 109, 0.12);
+}
+
+.ct-section .ct-monogram-letter { color: var(--color-accent-primary); }
+.ct-section .ct-deco-corner     { border-color: rgba(182, 95, 109, 0.4); }
+.ct-section .ct-orbit-ring      { border-color: rgba(182, 95, 109, 0.15); }
+
+.ct-section .ct-data-chip {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(182, 95, 109, 0.18);
+  color: var(--color-text-muted);
+}
+
+.ct-section .ct-deco-caption    { color: var(--color-text-dark); font-weight: 600; }
+.ct-section .ct-deco-sub        { color: var(--color-text-subtle); }
+
+.ct-section .ct-separator {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(182, 95, 109, 0.15) 30%,
+    rgba(182, 95, 109, 0.3) 50%,
+    rgba(182, 95, 109, 0.15) 70%,
+    transparent
+  );
+}
+
+/* Footer override for medium-light background */
+.ct-section .ct-footer {
+  border-color: rgba(182, 95, 109, 0.14);
+  background: rgba(235, 227, 224, 0.7);
+}
+
+.ct-section .ct-footer-brandname  { color: var(--color-accent-primary); }
+.ct-section .ct-footer-brandtag   { color: var(--color-text-muted); }
+.ct-section .ct-footer-copy       { color: var(--color-text-subtle); }
+
+.ct-section .ct-footer-icon {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(182, 95, 109, 0.16);
+  color: var(--color-text-muted);
+}
+
+.ct-section .ct-footer-icon:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+  background: #FFFFFF;
+}
+
+.ct-section .ct-glow-left,
+.ct-section .ct-glow-right {
+  opacity: 0.45;
+  filter: blur(30px);
+}
+/* Contact section btn-primary looks fine — rose on dark works well */
+
+/* ==========================================================================
+   CHAPTER TRANSITION HAIRLINES
+   A single-pixel gradient rule between chapters for visual continuity.
+   ========================================================================== */
+
+/* Each section gets a top hairline that fades in from the sides */
+.chapter-divider {
+  position: relative;
+}
+.chapter-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-border-soft) 25%,
+    rgba(182, 95, 109, 0.18) 50%,
+    var(--color-border-soft) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Dark contact section gets a slightly brighter divider */
+.ct-section.chapter-divider::before {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(232, 162, 173, 0.12) 25%,
+    rgba(232, 162, 173, 0.28) 50%,
+    rgba(232, 162, 173, 0.12) 75%,
+    transparent 100%
+  );
+}

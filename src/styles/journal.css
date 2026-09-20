@@ -1,0 +1,551 @@
+/* ==========================================================================
+   JOURNAL / READING ROOM SECTION STYLES (Blush/Cream Medical Editorial Theme)
+   ========================================================================== */
+
+.journal-section {
+  position: relative;
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+/* ── Background Ambient Glows ── */
+.jour-glow-left {
+  position: absolute;
+  top: 10%;
+  left: -8%;
+  width: 480px;
+  height: 480px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(235, 206, 202, 0.38) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jour-glow-right {
+  position: absolute;
+  bottom: 10%;
+  right: -8%;
+  width: 440px;
+  height: 440px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(243, 228, 225, 0.4) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Procedural DNA Helix Background ── */
+.jour-helix-bg {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 120px;
+  height: auto;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .jour-helix-bg {
+    width: 80px;
+    opacity: 0.35;
+    top: 4%;
+    right: 1%;
+  }
+}
+
+/* ── Section Header ── */
+.jour-header {
+  max-width: 680px;
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.jour-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.jour-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.jour-eyebrow-line {
+  flex: 1;
+  max-width: 72px;
+  height: 1px;
+  background: var(--color-accent-subtle);
+  border-radius: var(--radius-full);
+}
+
+.jour-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-dark);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.jour-intro {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 560px;
+  margin-bottom: var(--space-md);
+}
+
+/* Disclaimer pill */
+.jour-disclaimer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.38rem 0.9rem;
+  background: rgba(182, 95, 109, 0.08);
+  border: 1px solid rgba(182, 95, 109, 0.2);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+/* ── Reading Room Layout ── */
+.jour-reading-room {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .jour-reading-room {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+/* ── Index Panel ── */
+.jour-index-panel {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.jour-index-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.jour-index-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  border: none;
+  border-bottom: 1px solid var(--color-border-light);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.jour-index-item:last-child {
+  border-bottom: none;
+}
+
+.jour-index-item:hover {
+  background: var(--color-bg-secondary);
+}
+
+.jour-index-item.is-active {
+  background: rgba(182, 95, 109, 0.06);
+  border-left: 3px solid var(--color-accent-primary);
+}
+
+.jour-index-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.jour-index-item.is-active .jour-index-num {
+  background: var(--color-accent-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-accent-primary);
+}
+
+.jour-index-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.jour-index-title {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-dark);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-2xs);
+  /* clamp long titles */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.jour-index-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.jour-index-arrow {
+  flex-shrink: 0;
+  color: var(--color-text-subtle);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  margin-top: 2px;
+}
+
+.jour-index-item.is-active .jour-index-arrow,
+.jour-index-item:hover .jour-index-arrow {
+  opacity: 1;
+  color: var(--color-accent-primary);
+}
+
+/* ── Status Badges ── */
+.jour-status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-lit {
+  background: rgba(182, 95, 109, 0.1);
+  color: var(--color-accent-primary);
+  border: 1px solid rgba(182, 95, 109, 0.22);
+}
+
+.badge-aoi {
+  background: rgba(100, 140, 180, 0.1);
+  color: #4a7aaa;
+  border: 1px solid rgba(100, 140, 180, 0.25);
+}
+
+.badge-theory {
+  background: rgba(140, 120, 90, 0.1);
+  color: #7a6040;
+  border: 1px solid rgba(140, 120, 90, 0.22);
+}
+
+/* ── Article Reading Pane ── */
+.jour-article-pane {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.jour-pane-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.jour-pane-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.jour-pane-category-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.3rem 0.75rem;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.jour-pane-read-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* Exploration Note Banner */
+.jour-exploration-note {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(182, 95, 109, 0.06);
+  border: 1px solid rgba(182, 95, 109, 0.15);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  color: var(--color-accent-primary);
+}
+
+.jour-exploration-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.jour-exploration-note p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-relaxed);
+  color: #8a4858;
+}
+
+.jour-exploration-note strong {
+  font-weight: var(--fw-semibold);
+}
+
+/* Article Title */
+.jour-pane-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-dark);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-lg);
+}
+
+/* Content Blocks */
+.jour-block-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.jour-summary-block,
+.jour-inquiries-block,
+.jour-interests-block {
+  margin-bottom: var(--space-lg);
+}
+
+.jour-summary-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+/* Inquiry List */
+.jour-inquiry-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.jour-inquiry-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+.jour-inquiry-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-primary);
+  margin-top: 8px;
+  opacity: 0.6;
+}
+
+/* Interest Pills */
+.jour-interest-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.jour-interest-pill {
+  padding: 0.3rem 0.75rem;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.jour-interest-pill:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+/* Pane Footer */
+.jour-pane-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-light);
+  margin-top: var(--space-md);
+}
+
+.jour-entry-counter {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-subtle);
+  letter-spacing: var(--tracking-wide);
+}
+
+.jour-entry-num {
+  font-weight: var(--fw-bold);
+  color: var(--color-accent-primary);
+}
+
+/* Navigation dots */
+.jour-nav-dots {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.jour-nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-border-soft);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  padding: 0;
+}
+
+.jour-nav-dot.is-active {
+  background: var(--color-accent-primary);
+  transform: scale(1.3);
+}
+
+.jour-nav-dot:hover:not(.is-active) {
+  background: var(--color-accent-subtle);
+}
+
+/* ── Responsive — 768px ── */
+@media (max-width: 768px) {
+  .jour-article-pane {
+    padding: var(--space-lg);
+  }
+
+  .jour-pane-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .jour-pane-title {
+    font-size: 1.15rem;
+  }
+}
+
+/* ── Responsive — 480px ── */
+@media (max-width: 480px) {
+  .jour-article-pane {
+    padding: var(--space-md);
+  }
+
+  .jour-heading {
+    font-size: 1.5rem;
+  }
+
+  .jour-index-item {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .jour-pane-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}
+
+/* ── Responsive — 360px ── */
+@media (max-width: 380px) {
+  .jour-exploration-note {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .jour-disclaimer-pill span {
+    font-size: 9px;
+  }
+}

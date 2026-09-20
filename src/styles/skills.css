@@ -1,0 +1,542 @@
+/* ==========================================================================
+   UNIFIED SKILLS & INSTRUMENTS SECTION STYLES
+   Blush/Cream Medical Editorial — Integrated Competency Pipeline
+   ========================================================================== */
+
+.skills-section {
+  position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* Ambient glow accents */
+.skills-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: -8%;
+  width: 540px;
+  height: 540px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(243, 228, 225, 0.45) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-ambient-glow-right {
+  position: absolute;
+  bottom: 20%;
+  right: -6%;
+  width: 480px;
+  height: 480px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(235, 206, 202, 0.35) 0%, rgba(250, 246, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Section Header ── */
+.skills-header {
+  max-width: 760px;
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  z-index: 1;
+}
+
+.skills-eyebrow-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.skills-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-accent-primary);
+  text-transform: uppercase;
+}
+
+.skills-eyebrow-line {
+  width: 48px;
+  height: 1.5px;
+  background-color: var(--color-border-soft);
+}
+
+.skills-heading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--color-text-dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+.skills-intro-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--space-xs);
+  max-width: 640px;
+}
+
+/* ── Narrative Progression Strip ── */
+.skills-progression-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: 0.4rem 0.9rem;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-subtle);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.skills-prog-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-dark);
+  white-space: nowrap;
+}
+
+.skills-prog-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-primary);
+  font-size: 10px;
+  font-weight: var(--fw-bold);
+}
+
+.skills-prog-arrow {
+  color: var(--color-text-subtle);
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 640px) {
+  .skills-progression-nav {
+    display: none;
+  }
+}
+
+/* ── Mobile Skills Tab Switcher (≤768px) ── */
+.skills-mobile-tabs {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .skills-mobile-tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-subtle);
+    margin-bottom: var(--space-lg);
+    width: 100%;
+  }
+
+  .skills-mobile-tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.55rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-muted);
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+    text-align: center;
+  }
+
+  .skills-mobile-tab-btn:hover {
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-secondary);
+  }
+
+  .skills-mobile-tab-btn.is-active {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-inverse);
+    box-shadow: 0 2px 8px rgba(182, 95, 109, 0.28);
+  }
+
+  /* On mobile: hide both tab panels by default; show only the active one */
+  .skills-part-tab-panel {
+    display: none;
+  }
+
+  .skills-part-tab-panel.is-tab-active {
+    display: block;
+  }
+}
+
+/* ── Common Part Block Layout ── */
+.skills-part-block {
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-2xl);
+}
+
+.skills-part-header {
+  margin-bottom: var(--space-md);
+  max-width: 680px;
+}
+
+.skills-part-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xxs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  background-color: rgba(182, 95, 109, 0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-xs);
+}
+
+.skills-part-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-dark);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-2xs);
+}
+
+.skills-part-sub {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+/* ==========================================================================
+   PART 1: EDITORIAL DISCIPLINES LIST (COMPACT LEDGER)
+   ========================================================================== */
+
+.skills-disciplines-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 860px) {
+  .skills-disciplines-list {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+}
+
+.skills-discipline-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: var(--card-surface-skills);
+  border: 1px solid rgba(182, 95, 109, 0.16);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: none;
+  transition: all var(--transition-fast);
+}
+
+.skills-discipline-row:hover {
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px -2px rgba(182, 95, 109, 0.12);
+}
+
+.skills-disc-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.skills-disc-index {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-subtle);
+  width: 20px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.skills-disc-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+}
+
+.skills-disc-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.skills-disc-code-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1px;
+}
+
+.skills-disc-code {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+/* Core Diagnostic Skill Name - Prominent, Bold & Bulky */
+.skills-disc-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.skills-disc-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--color-border-light);
+}
+
+.skills-topic-chip {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+.skills-topic-chip:hover {
+  color: var(--color-accent-primary);
+  border-color: rgba(182, 95, 109, 0.35);
+  background-color: var(--color-accent-subtle);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   PART 2: PRACTICAL BENCH TECHNIQUES
+   ========================================================================== */
+
+.skills-techniques-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .skills-techniques-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.skills-technique-strip {
+  background-color: var(--card-surface-skills);
+  border: 1px solid rgba(182, 95, 109, 0.16);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.skills-technique-strip:hover {
+  border-color: var(--color-accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px -2px rgba(182, 95, 109, 0.12);
+}
+
+.skills-tech-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.skills-tech-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.skills-technique-strip:hover .skills-tech-icon-box {
+  background-color: var(--color-accent-subtle);
+  border-color: var(--color-accent-primary);
+  transform: scale(1.05);
+}
+
+.skills-tech-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+/* Practical Bench Technique Name - Prominent, Bold & Bulky */
+.skills-tech-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+}
+
+.skills-tech-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent-primary);
+}
+
+.skills-tech-desc {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* SOP & Biosafety Notice Strip */
+.skills-sop-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background-color: rgba(182, 95, 109, 0.05);
+  border: 1px solid rgba(182, 95, 109, 0.16);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-dark);
+}
+
+.skills-sop-notice svg {
+  color: var(--color-accent-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.skills-sop-notice p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+}
+
+.skills-sop-notice strong {
+  color: var(--color-text-dark);
+  font-weight: var(--fw-semibold);
+}
+
+/* ==========================================================================
+   PART 3: LABORATORY INSTRUMENTATION
+   ========================================================================== */
+
+.skills-part-instruments {
+  margin-bottom: 0;
+}
+
+/* Responsiveness Guard for Small Mobile */
+@media (max-width: 480px) {
+  .skills-discipline-row {
+    padding: var(--space-md);
+  }
+  .skills-disc-topics {
+    gap: 4px;
+  }
+  .skills-topic-chip {
+    font-size: 10px;
+    padding: 0.15rem 0.45rem;
+  }
+  .skills-technique-strip {
+    padding: var(--space-md);
+  }
+
+  /* Tighten part headers */
+  .skills-part-block {
+    margin-bottom: var(--space-xl);
+  }
+  .skills-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* SOP notice tighter */
+  .skills-sop-notice {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 360px) {
+  .skills-discipline-row {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .skills-technique-strip {
+    padding: var(--space-sm) var(--space-md);
+  }
+  .skills-part-block {
+    margin-bottom: var(--space-lg);
+  }
+  .skills-disc-name {
+    font-size: 1.05rem;
+  }
+  .skills-tech-name {
+    font-size: 1rem;
+  }
+}

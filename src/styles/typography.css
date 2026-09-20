@@ -1,0 +1,178 @@
+/* Typography Utility Classes */
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Headings */
+.text-hero {
+  font-family: var(--font-serif);
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-dark);
+}
+
+.text-section-title {
+  font-family: var(--font-serif);
+  font-size: var(--fs-section-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-dark);
+}
+
+.text-subheading {
+  font-family: var(--font-serif);
+  font-size: var(--fs-subheading);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  color: var(--color-text-dark);
+}
+
+.text-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--color-text-dark);
+}
+
+/* Editorial Script Accent (e.g. "Better Lives", "Impact", "Answers") */
+.text-script-accent {
+  font-family: var(--font-script);
+  font-size: 1.15em;
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  color: var(--color-accent-primary);
+  display: inline-block;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* Eyebrows / Micro-labels */
+.text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.text-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-accent-primary);
+}
+
+/* Body & Metadata */
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+.text-xs {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  color: var(--color-text-subtle);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-subtle {
+  color: var(--color-text-subtle);
+}
+
+.text-accent {
+  color: var(--color-accent-primary);
+}
+
+/* ==========================================================================
+   STEP 9: EDITORIAL HIGHLIGHTS & WATERMARKS
+   ========================================================================== */
+
+/* Subtle Rose Marker Highlight */
+.text-highlight-rose {
+  background: linear-gradient(120deg, rgba(182, 95, 109, 0.14) 0%, rgba(182, 95, 109, 0.22) 100%);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-xs);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Italic Serif Emphasis */
+.text-editorial-em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--fw-semibold);
+  color: var(--color-accent-primary);
+}
+
+/* Giant Translucent Chapter Watermark Numeral */
+.section-watermark-num {
+  position: absolute;
+  top: -15px;
+  right: 2%;
+  font-family: var(--font-serif);
+  font-size: clamp(7.5rem, 16vw, 15rem);
+  font-weight: 700;
+  line-height: 0.85;
+  color: var(--color-accent-primary);
+  opacity: 0.045;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+/* Technical Calibration Background Grid for Skills & Instruments */
+.lab-technical-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(95, 126, 182, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(95, 126, 182, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hairline Expanding Eyebrow Accent Rule */
+.eyebrow-accent-rule {
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}

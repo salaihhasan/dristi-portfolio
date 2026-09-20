@@ -22,7 +22,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
 
-  base: '/dristi-portfolio/',
+   base: '/dristi-portfolio/',
 
   server: {
     port: 3000,

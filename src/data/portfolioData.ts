@@ -1,4 +1,6 @@
 import { PortfolioData } from '../types/portfolio';
+import { asset } from '../utils/assetPath';
+
 
 /**
  * ============================================================================
@@ -28,7 +30,7 @@ export const portfolioData: PortfolioData = {
 
   // Hero Section Data
   hero: {
-    brandName: 'Dristi.',
+    brandName: 'Drishti.',
     brandSubtitle: 'SCIENCE TODAY · HEALTHIER TOMORROW',
     eyebrow: 'MEDICAL LABORATORY TECHNOLOGIST',
     headingPrefix: 'Turning Science into',
@@ -41,9 +43,10 @@ export const portfolioData: PortfolioData = {
     },
     secondaryCta: {
       label: 'Download Resume',
-      href: '/assets/docs/resume.docx',
+      href: asset('/assets/docs/resume.docx'),
     },
-    heroImage: '/assets/profile/dristi_heroSection.png',
+    heroImage: asset('/assets/profile/dristi_heroSection.png'),
+
     stats: [
       {
         id: 'stat-degree',
@@ -132,10 +135,11 @@ export const portfolioData: PortfolioData = {
     personalNarrative:
       "I am someone who is naturally curious about people, ideas, and how things work. While my academic foundation is in Medical Laboratory Technology, my interests extend across healthcare, technology, human behavior, and creativity. I believe that stepping into unfamiliar challenges and collaborating across disciplines makes us more observant scientists and compassionate professionals.",
     photos: {
-      heroPortrait: '/assets/profile/dristi_heroSection.png',
-      framedCircle1: '/assets/profile/dristi_img1.png',
-      framedCircle2: '/assets/profile/dristi_img2.png',
+      heroPortrait: asset('/assets/profile/dristi_heroSection.png'),
+      framedCircle1: asset('/assets/profile/dristi_img1.png'),
+      framedCircle2: asset('/assets/profile/dristi_img2.png'),
     },
+
   },
 
   // Education History (Strictly authentic dates & schools from complete_details.pdf)
@@ -353,7 +357,7 @@ export const portfolioData: PortfolioData = {
         'Examined diagnostic culture inoculation and antibiotic sensitivity testing procedures',
         'Gained insight into clinical turnaround times and error prevention in critical reporting',
       ],
-      image: '/assets/experience/hospital_visit.png',
+      image: asset('/assets/experience/hospital_visit.png'),
     },
     {
       id: 'exp-eye-camp',
@@ -369,7 +373,7 @@ export const portfolioData: PortfolioData = {
         'Communicated preventive health screening guidelines to diverse community members',
         'Coordinated interprofessional handoffs between screening teams and consulting doctors',
       ],
-      image: '/assets/experience/Eye_checkup.png',
+      image: asset('/assets/experience/Eye_checkup.png'),
     },
     {
       id: 'exp-hand-hygiene',
@@ -384,7 +388,7 @@ export const portfolioData: PortfolioData = {
         'Taught microbiological transmission concepts and aseptic techniques to students',
         'Demonstrated correct sanitization timing to prevent nosocomial and community infections',
       ],
-      image: '/assets/experience/world_handHygene_day.jpeg',
+      image: asset('/assets/experience/world_handHygene_day.jpeg'),
     },
     {
       id: 'exp-india-health',
@@ -400,7 +404,8 @@ export const portfolioData: PortfolioData = {
         'Reviewed emerging Point-of-Care Testing (POCT) and microfluidic technologies',
         'Observed modern digital pathology scanners and AI-assisted diagnostic software',
       ],
-      image: '/assets/experience/India Health.jpeg',
+      image: asset('/assets/experience/India Health.jpeg'),
+
     },
   ],
 
@@ -544,7 +549,7 @@ export const portfolioData: PortfolioData = {
       issueDate: 'Sep 2026',
       category: 'Healthcare & Biotechnology',
       hasImageAttachment: true,
-      image: '/assets/certificates/AI IN Healthcare.jpeg',
+      image: asset('/assets/certificates/AI IN Healthcare.jpeg'),
       description: 'Exploration of artificial intelligence applications in clinical diagnostics, medical imaging, and healthcare workflow optimization.',
     },
     {
@@ -554,8 +559,9 @@ export const portfolioData: PortfolioData = {
       issueDate: 'Jul 2026',
       category: 'Healthcare & Biotechnology',
       hasImageAttachment: true,
-      image: '/assets/certificates/Beyond_The lab.png',
+      image: asset('/assets/certificates/Beyond_The lab.png'),
       description: 'Comprehensive program exploring modern biotechnology innovations, lab-to-market translation, and diagnostic technology trends.',
+
     },
     {
       id: 'cert-google-ai-essentials',
@@ -676,7 +682,7 @@ export const portfolioData: PortfolioData = {
       description:
         'Supported a 24-hour national hackathon through continuous participant coordination, event logistics assistance, and on-ground team management; honed real-time problem-solving and collaboration under high pressure.',
       keyTakeaways: ['24-Hour operations management', 'Cross-team communication', 'Real-time issue resolution'],
-      image: '/assets/leadership/rift-volunteer.jpeg',
+      image: asset('/assets/leadership/rift-volunteer.jpeg'),
     },
     {
       id: 'lead-starlit-gala',
@@ -685,7 +691,7 @@ export const portfolioData: PortfolioData = {
       description:
         'Assisted the central university organizing committee with event planning, schedule coordination, and stage execution for the annual welcome gala.',
       keyTakeaways: ['Event planning and stage timing', 'Collaborative execution', 'Audience engagement'],
-      image: '/assets/leadership/Starlit.jpeg',
+      image: asset('/assets/leadership/Starlit.jpeg'),
     },
     {
       id: 'lead-design-kickstart',
@@ -694,7 +700,8 @@ export const portfolioData: PortfolioData = {
       description:
         'Gained introductory hands-on exposure to user experience design principles, design thinking frameworks, wireframing, and modern design tools.',
       keyTakeaways: ['User-centered design thinking', 'Visual hierarchy and layout principles', 'Empathy-driven solutions'],
-      image: '/assets/leadership/design_kickstart.png',
+      image: asset('/assets/leadership/design_kickstart.png'),
+
     },
     {
       id: 'lead-techmate',
@@ -719,6 +726,7 @@ export const portfolioData: PortfolioData = {
       email: 'drishtisharma962569@gmail.com',
       // github is intentionally omitted per user decision until authentic URL is provided
     },
-    resumeDownloadUrl: '/assets/docs/resume.docx',
+    resumeDownloadUrl: asset('/assets/docs/resume.docx'),
   },
 };
+

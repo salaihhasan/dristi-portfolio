@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:gh": "VITE_BASE_URL=/dristi-portfolio/ tsc && VITE_BASE_URL=/dristi-portfolio/ vite build",
     "preview": "vite preview"
+
   },
   "dependencies": {
     "@react-three/drei": "^9.117.3",
